@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Storage Example</title>
+
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    function onDeviceReady() {
+        console.log(window.localStorage.key(0));
+        var keyname = window.localStorage.key(0);
+        var value = window.localStorage.getItem("key");
+
+        var result = document.getElementById('result');
+        result.innerHTML = "Value received is: " + value;
+    }
+    </script>
+  </head>
+  <body>
+    <h1>Example</h1>
+    <p id="result"></p>
+
+    <a href="ls.html">Back</a>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Storage Example</title>
+
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Wait for Cordova to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    function onDeviceReady() {
+        window.localStorage.setItem("key", "value");
+        var keyname = window.localStorage.key(0);
+        // keyname is now equal to "key"
+        var value = window.localStorage.getItem("key");
+        // value is now equal to "value"
+
+        var result = document.getElementById('result');
+        result.innerHTML = "Value saved is: " + value;
+
+        var input = document.getElementById('saveToLocalStorage');
+        input.addEventListener("keyup", function() {
+            window.localStorage.setItem("key", this.value);
+        });
+    }
+
+    </script>
+  </head>
+  <body>
+    <h1>Example</h1>
+    <p id="result"></p>
+    
+    <label>Enter value to save: </label>
+    <input type="text" id="saveToLocalStorage" /> 
+
+    <a href="ls2.html">Next</a>
+  </body>
+</html>
